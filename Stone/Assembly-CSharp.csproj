@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scenes\Monkey\Monkey.cs" />
+    <Compile Include="Assets\Scripts\Camera Scripts\CameraFollow.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/Joey Shen/Culearn/3004/3004B_Project/Stone/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
