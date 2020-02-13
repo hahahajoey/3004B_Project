@@ -31,7 +31,7 @@ public class CameraFollow : MonoBehaviour
         if (target.position.y > 540)
         { camera_temp.y = 540; }
         else if (target.position.y < -540)
-        { camera_temp.y = -540 }
+        { camera_temp.y = -540; }
 
         transform.position = camera_temp;
     }
