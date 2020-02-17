@@ -7,7 +7,7 @@ public class CameraFollow : MonoBehaviour
     private Transform target;
 
     //Run before the game start
-    void Start()
+    void Awake()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
     }
@@ -21,18 +21,9 @@ public class CameraFollow : MonoBehaviour
     //A follow funtion that keep trake with the camera's position
     void Follow()
     {
-        Vector3 camera_temp = transform.position;
+        Vector3 camera_postion = transform.position;
+        camera_postion = target.position;
+        //transform.position = camera_postion;
 
-        if (target.position.x > 960)
-        { camera_temp.x = 960; }
-        else if (target.position.x < -960)
-        { camera_temp.x = -960; }
-
-        if (target.position.y > 540)
-        { camera_temp.y = 540; }
-        else if (target.position.y < -540)
-        { camera_temp.y = -540; }
-
-        transform.position = camera_temp;
     }
 }
