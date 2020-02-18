@@ -21,9 +21,22 @@ public class CameraFollow : MonoBehaviour
     //A follow funtion that keep trake with the camera's position
     void Follow()
     {
-        Vector3 camera_postion = transform.position;
-        camera_postion = target.position;
-        //transform.position = camera_postion;
+        Vector3 camera = transform.position;
 
+        if (target.position.x > 9.6f)
+        { camera.x = 9.6f; }
+        else if (target.position.x < -9.6)
+        { camera.x = -9.6f; }
+        else 
+        { camera.x = target.position.x; }
+
+        if (target.position.y > 5.4f)
+        { camera.y = 5.4f; }
+        else if (target.position.y < -5.4f)
+        { camera.y = -5.4f; }
+        else
+        { camera.y = target.position.y; }
+
+        transform.position = camera;
     }
 }
