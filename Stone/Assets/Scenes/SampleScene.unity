@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 132684787}
   - component: {fileID: 132684786}
   - component: {fileID: 132684785}
+  - component: {fileID: 132684788}
   m_Layer: 0
   m_Name: Left
   m_TagString: Untagged
@@ -226,6 +227,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 132684783}
   m_CullTransparentMesh: 0
+--- !u!114 &132684788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132684783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 923925765}
+          m_MethodName: canmoveUp
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 923925765}
+          m_MethodName: canmoveUp
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  delegates: []
 --- !u!1 &199492821
 GameObject:
   m_ObjectHideFlags: 0
@@ -755,6 +800,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 817678250}
   m_CullTransparentMesh: 0
+--- !u!114 &923925765 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7482739663784845788, guid: 41b1d25def82b244594bde03bb2efa7f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7482739664191499326}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9973b64ba4c3138459231fb49783b215, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1011437861
 GameObject:
   m_ObjectHideFlags: 0
@@ -790,7 +847,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
 --- !u!114 &1011437863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -869,6 +926,7 @@ GameObject:
   - component: {fileID: 1215219991}
   - component: {fileID: 1215219990}
   - component: {fileID: 1215219989}
+  - component: {fileID: 1215219992}
   m_Layer: 0
   m_Name: Right
   m_TagString: Untagged
@@ -971,6 +1029,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1215219987}
   m_CullTransparentMesh: 0
+--- !u!114 &1215219992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1215219987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 923925765}
+          m_MethodName: canmoveLeft
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 923925765}
+          m_MethodName: canmoveLeft
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  delegates: []
 --- !u!1 &1576587520
 GameObject:
   m_ObjectHideFlags: 0
@@ -1060,6 +1162,7 @@ GameObject:
   - component: {fileID: 1677343914}
   - component: {fileID: 1677343913}
   - component: {fileID: 1677343912}
+  - component: {fileID: 1677343915}
   m_Layer: 0
   m_Name: Up
   m_TagString: Untagged
@@ -1162,6 +1265,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1677343910}
   m_CullTransparentMesh: 0
+--- !u!114 &1677343915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677343910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 923925765}
+          m_MethodName: canmoveDown
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 923925765}
+          m_MethodName: canmoveDown
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  delegates: []
 --- !u!1 &2043990509
 GameObject:
   m_ObjectHideFlags: 0
@@ -1173,6 +1320,7 @@ GameObject:
   - component: {fileID: 2043990510}
   - component: {fileID: 2043990513}
   - component: {fileID: 2043990512}
+  - component: {fileID: 2043990514}
   - component: {fileID: 2043990511}
   m_Layer: 0
   m_Name: Down
@@ -1276,6 +1424,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2043990509}
   m_CullTransparentMesh: 0
+--- !u!114 &2043990514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043990509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 923925765}
+          m_MethodName: canmoveRight
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 923925765}
+          m_MethodName: canmoveRight
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  delegates: []
 --- !u!1001 &2326187736816887563
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1346,6 +1538,21 @@ PrefabInstance:
     - target: {fileID: 2326187736917044523, guid: 0feb884fc42bc92459559584ef906dd3,
         type: 3}
       propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326187736917044523, guid: 0feb884fc42bc92459559584ef906dd3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326187736917044523, guid: 0feb884fc42bc92459559584ef906dd3,
+        type: 3}
+      propertyPath: m_UsedByEffector
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326187736917044523, guid: 0feb884fc42bc92459559584ef906dd3,
+        type: 3}
+      propertyPath: m_UsedByComposite
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1361,6 +1568,11 @@ PrefabInstance:
         type: 3}
       propertyPath: speed
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7482739663784845788, guid: 41b1d25def82b244594bde03bb2efa7f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7482739663784845791, guid: 41b1d25def82b244594bde03bb2efa7f,
         type: 3}
@@ -1421,6 +1633,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: playerblock
+      objectReference: {fileID: 0}
+    - target: {fileID: 7482739663784845792, guid: 41b1d25def82b244594bde03bb2efa7f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7482739663784845793, guid: 41b1d25def82b244594bde03bb2efa7f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7482739663784845793, guid: 41b1d25def82b244594bde03bb2efa7f,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41b1d25def82b244594bde03bb2efa7f, type: 3}
