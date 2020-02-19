@@ -9,83 +9,152 @@ public class PlayerControlScript : MonoBehaviour
 
 
     public float speed = 1f;
-
+    public Rigidbody2D mybody;
     private bool death;
-    private bool moveRight;
-    private bool moveUp;
-    private bool moveLeft;
-    private bool moveDown;
+    private bool moveRight = false;
+    private bool moveUp = false;
+    private bool moveLeft = false;
+    private bool moveDown = false;
     private bool allowmoveRight;
+    public Animator animator;
 
+    Vector2 movement;
     // Start is called before the first frame update
-    void Start()
-    {
-        moveRight = false;
-        allowmoveRight = true;
-        postion = transform.position;
-    }
+    
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
-       
-         Move(); 
+        
+
+        Move();
+
+        Stop();
         
     }
 
 
- 
- 
-
-    public void Move_Up()
-    { transform.position += Vector3.up * speed * Time.deltaTime; }
-
-   public void Move_Down()
-    { transform.position += Vector3.down * speed * Time.deltaTime; }
-
-    public void Move_Left()
-    { transform.position += Vector3.left * speed * Time.deltaTime; }
-    public void Move_Right()
-    { transform.position += Vector3.right * speed * Time.deltaTime; }
-
-    public void canmoveRight(bool movement)
+   
+    public void MoveLeft()
     {
-         moveRight = movement; 
+
+        mybody.velocity = new Vector2(-speed, mybody.velocity.y);
+        
+
+    }
+  
+    public void MoveRight()
+    {
+        mybody.velocity = new Vector2(speed, mybody.velocity.y);
+
+    }
+    public void MoveDown()
+    {
+        mybody.velocity = new Vector2(mybody.velocity.x, -speed);
+
+    }
+    public void MoveUp()
+    {
+        mybody.velocity = new Vector2(mybody.velocity.x,speed);
+
+
+    }
+
+
+
+
+
+    public void canmoveRight(bool m)
+    {
+        moveRight = m;
        
+        animator.SetFloat("Horizontal", -1);
+        animator.SetFloat("Vertical", 0);
+        animator.SetFloat("speed", 1);
     }
-    public void canmoveLeft(bool movement)
+    public void canmoveLeft(bool m)
     {
-        moveLeft = movement;
+        moveLeft = m;
+
+        animator.SetFloat("Horizontal", 1);
+        animator.SetFloat("Vertical", 0);
+        animator.SetFloat("speed", 1);
+
+
+
     }
-    public void canmoveUp(bool movement)
+    public void canmoveUp(bool m)
     {
-        moveUp = movement;
+        moveUp = m;
+        animator.SetFloat("Horizontal", 0);
+        animator.SetFloat("Vertical", 1);
+        animator.SetFloat("speed", 1);
     }
-    public void canmoveDown(bool movement)
+    public void canmoveDown(bool m)
     {
-        moveDown = movement;
+        moveDown = m;
+        animator.SetFloat("Horizontal", 0);
+        animator.SetFloat("Vertical", -1);
+        animator.SetFloat("speed", 1);
     }
- 
+
 
     void Move()
     {
+       // movement.x = Input.GetAxisRaw("Horizontal");
+       // movement.y = Input.GetAxisRaw("Vertical");
+
+      
+
         if (moveRight)
         {
-            Move_Right(); 
+            MoveRight();
             
+
         }
-        else if (moveLeft)
+       
+        else if (moveDown)
         {
-            Move_Left();
+            MoveDown();
+
         }
         else if (moveUp)
         {
-            Move_Up();
+            MoveUp();
+
         }
-        else if (moveDown)
+        else if (moveLeft)
         {
-            Move_Down();
+            MoveLeft();
+
+        }
+       
+        //movement.sqrMagnitude
+
+
+
+
+    }
+    void Stop()
+    {
+        if ((!moveRight)  & (!moveLeft))
+        {
+            mybody.velocity = new Vector2(0f, mybody.velocity.y);
+            
+        }
+        if ((!moveUp) & (!moveDown))
+        {
+            mybody.velocity = new Vector2(mybody.velocity.x,0f);
+            
+        }
+        if ((!moveUp) & (!moveDown) & (!moveRight) & (!moveLeft))
+        {
+            animator.SetFloat("Horizontal", 0);
+            animator.SetFloat("Vertical", 0);
+            animator.SetFloat("speed", 0);
         }
     }
+
+
 
 }
