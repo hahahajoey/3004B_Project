@@ -7,154 +7,83 @@ public class PlayerControlScript : MonoBehaviour
 
     private Vector3 postion;
 
-
     public float speed = 1f;
-    public Rigidbody2D mybody;
-    private bool death;
-    private bool moveRight = false;
-    private bool moveUp = false;
-    private bool moveLeft = false;
-    private bool moveDown = false;
-    private bool allowmoveRight;
+
+    public Rigidbody2D rb;
+
     public Animator animator;
 
+    private bool death;
+    private bool CanMoveRight;
+    private bool CanMoveLeft;
+    private bool CanMoveUp;
+    private bool CanMoveDown;
+
     Vector2 movement;
+
     // Start is called before the first frame update
-    
+    void Start()
+    {
+        postion = transform.position;
+    }
 
     // Update is called once per frame
-    public void Update()
+    void Update()
     {
-        
-
         Move();
-
-        Stop();
-        
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
+        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Vertical", movement.y);
+        animator.SetFloat("Speed", movement.sqrMagnitude);
     }
 
+    void Move_Up() 
+    { transform.position += Vector3.up * speed * Time.deltaTime;}
 
-   
-    public void MoveLeft()
+    void Move_Down()
+    { transform.position += Vector3.down * speed *Time.deltaTime;}
+
+    void Move_Left()
+    { transform.position += Vector3.left * speed * Time.deltaTime;}
+    void Move_Right()
+    { transform.position += Vector3.right * speed * Time.deltaTime;}
+    public void Allow_Move_Right(bool m)
     {
-
-        mybody.velocity = new Vector2(-speed, mybody.velocity.y);
-        
-
+        CanMoveRight = m;
     }
-  
-    public void MoveRight()
+    public void Allow_Move_Left(bool m)
     {
-        mybody.velocity = new Vector2(speed, mybody.velocity.y);
-
+        CanMoveLeft = m;
     }
-    public void MoveDown()
+    public void Allow_Move_Up(bool m)
     {
-        mybody.velocity = new Vector2(mybody.velocity.x, -speed);
-
+        CanMoveUp = m;
     }
-    public void MoveUp()
+    public void Allow_Move_Down(bool m)
     {
-        mybody.velocity = new Vector2(mybody.velocity.x,speed);
-
-
+        CanMoveDown = m;
     }
-
-
-
-
-
-    public void canmoveRight(bool m)
-    {
-        moveRight = m;
-       
-        animator.SetFloat("Horizontal", -1);
-        animator.SetFloat("Vertical", 0);
-        animator.SetFloat("speed", 1);
-    }
-    public void canmoveLeft(bool m)
-    {
-        moveLeft = m;
-
-        animator.SetFloat("Horizontal", 1);
-        animator.SetFloat("Vertical", 0);
-        animator.SetFloat("speed", 1);
-
-
-
-    }
-    public void canmoveUp(bool m)
-    {
-        moveUp = m;
-        animator.SetFloat("Horizontal", 0);
-        animator.SetFloat("Vertical", 1);
-        animator.SetFloat("speed", 1);
-    }
-    public void canmoveDown(bool m)
-    {
-        moveDown = m;
-        animator.SetFloat("Horizontal", 0);
-        animator.SetFloat("Vertical", -1);
-        animator.SetFloat("speed", 1);
-    }
-
 
     void Move()
     {
-       // movement.x = Input.GetAxisRaw("Horizontal");
-       // movement.y = Input.GetAxisRaw("Vertical");
-
-      
-
-        if (moveRight)
+        if (CanMoveRight)
         {
-            MoveRight();
-            
+            Move_Right();
+        }
+        if (CanMoveLeft)
+        {
+            Move_Left();
 
         }
-       
-        else if (moveDown)
+        if (CanMoveUp)
         {
-            MoveDown();
-
+            Move_Up();
         }
-        else if (moveUp)
+        if (CanMoveDown)
         {
-            MoveUp();
-
-        }
-        else if (moveLeft)
-        {
-            MoveLeft();
-
-        }
-       
-        //movement.sqrMagnitude
-
-
-
-
-    }
-    void Stop()
-    {
-        if ((!moveRight)  & (!moveLeft))
-        {
-            mybody.velocity = new Vector2(0f, mybody.velocity.y);
-            
-        }
-        if ((!moveUp) & (!moveDown))
-        {
-            mybody.velocity = new Vector2(mybody.velocity.x,0f);
-            
-        }
-        if ((!moveUp) & (!moveDown) & (!moveRight) & (!moveLeft))
-        {
-            animator.SetFloat("Horizontal", 0);
-            animator.SetFloat("Vertical", 0);
-            animator.SetFloat("speed", 0);
+            Move_Down();
         }
     }
-
-
 
 }
