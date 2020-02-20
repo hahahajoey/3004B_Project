@@ -34,6 +34,7 @@ public class PlayerControlScript : MonoBehaviour
         animator.SetFloat("Speed", movement.sqrMagnitude);
     }
 
+    //move call
     void Move_Up() 
     { transform.position += Vector3.up * speed * Time.deltaTime;}
 
@@ -45,15 +46,19 @@ public class PlayerControlScript : MonoBehaviour
     void Move_Right()
     { transform.position += Vector3.right * speed * Time.deltaTime;}
 
+    //attack funtion
+    void Attack()
+    { }
+
     void Move()
     {
         if (Input.GetKey(KeyCode.RightArrow))
         { Move_Right(); }
-        else if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow))
         { Move_Left(); }
-        else if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.UpArrow))
         { Move_Up(); }
-        else if (Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.DownArrow))
         { Move_Down(); }
     }
 
