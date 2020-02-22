@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerControlScript : MonoBehaviour
 {
+    public int maxHealth = 100;
+
+    public int currentHealth;
 
     private Vector3 postion;
 
@@ -12,6 +15,8 @@ public class PlayerControlScript : MonoBehaviour
     public Rigidbody2D rb;
 
     public Animator animator;
+
+    public HealthBar healthBar;
   
 
     private bool death;
@@ -22,12 +27,26 @@ public class PlayerControlScript : MonoBehaviour
     void Start()
     {
         postion = transform.position;
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            TakeDamage(20);
+        }
     }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+
+        healthBar.SetHealth(currentHealth);
+    }
+
     public void stop()
     {
         rb.velocity = new Vector2(0f, rb.velocity.y);
