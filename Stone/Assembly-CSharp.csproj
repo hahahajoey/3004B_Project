@@ -65,8 +65,11 @@
   <ItemGroup>
     <Compile Include="Assets\Scenes\Monkey\Monkey.cs" />
     <Compile Include="Assets\Scripts\Camera Scripts\CameraFollow.cs" />
+    <Compile Include="Assets\Scripts\Player Scripts\Drop.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\Inventory.cs" />
+    <Compile Include="Assets\Scripts\Player Scripts\Pickup.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\PlayerControlScript.cs" />
+    <Compile Include="Assets\Scripts\Player Scripts\Slot.cs" />
     <Compile Include="Assets\Scripts\Scene Scripts\EditMap.cs" />
     <Compile Include="Assets\Scripts\Scene Scripts\NewGame.cs" />
     <Compile Include="Assets\Scripts\Scene Scripts\Quit.cs" />
