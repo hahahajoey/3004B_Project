@@ -12,6 +12,7 @@ public class PlayerControlScript : MonoBehaviour
     public Rigidbody2D rb;
 
     public Animator animator;
+  
 
     private bool death;
 
@@ -26,40 +27,59 @@ public class PlayerControlScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move();
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
-        animator.SetFloat("Horizontal", movement.x);
-        animator.SetFloat("Vertical", movement.y);
-        animator.SetFloat("Speed", movement.sqrMagnitude);
+    }
+    public void stop()
+    {
+        rb.velocity = new Vector2(0f, rb.velocity.y);
+        animator.SetFloat("Speed", 0);
+
+    }
+    public void stop1()
+    {
+        rb.velocity = new Vector2( rb.velocity.x, 0f);
+        animator.SetFloat("Speed", 0);
     }
 
     //move call
-    void Move_Up() 
-    { transform.position += Vector3.up * speed * Time.deltaTime;}
+    public void Move_Up() 
+    { rb.velocity = new Vector2(rb.velocity.x ,+speed );
+        animator.SetFloat("Horizontal", 0);
+        animator.SetFloat("Vertical", 1);
+        animator.SetFloat("Speed", 1);
+        //animator.SetFloat("Horizontal", 1);
+        //animator.SetFloat("Vertical", 0);
+        //animator.SetFloat("Speed", 1);
 
-    void Move_Down()
-    { transform.position += Vector3.down * speed *Time.deltaTime;}
 
-    void Move_Left()
-    { transform.position += Vector3.left * speed * Time.deltaTime;}
-    void Move_Right()
-    { transform.position += Vector3.right * speed * Time.deltaTime;}
+    }
+
+    public void Move_Down()
+    { rb.velocity = new Vector2(rb.velocity.x, -speed);
+        animator.SetFloat("Horizontal", 0);
+        animator.SetFloat("Vertical", -1);
+        animator.SetFloat("Speed", 1);
+    }
+
+    public void Move_Left()
+    { rb.velocity = new Vector2(-speed, rb.velocity.y);
+        animator.SetFloat("Horizontal", -1);
+        animator.SetFloat("Vertical", 0);
+        animator.SetFloat("Speed", 1);
+
+    }
+    public void Move_Right()
+    { rb.velocity = new Vector2(speed, rb.velocity.y);
+        animator.SetFloat("Horizontal", 1);
+        animator.SetFloat("Vertical", 0);
+        animator.SetFloat("Speed", 1);
+
+    }
 
     //attack funtion
     void Attack()
     { }
+   
 
-    void Move()
-    {
-        if (Input.GetKey(KeyCode.RightArrow))
-        { Move_Right(); }
-        if (Input.GetKey(KeyCode.LeftArrow))
-        { Move_Left(); }
-        if (Input.GetKey(KeyCode.UpArrow))
-        { Move_Up(); }
-        if (Input.GetKey(KeyCode.DownArrow))
-        { Move_Down(); }
-    }
+   
 
 }

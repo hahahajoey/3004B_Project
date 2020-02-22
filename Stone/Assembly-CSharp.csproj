@@ -65,33 +65,36 @@
   <ItemGroup>
     <Compile Include="Assets\Scenes\Monkey\Monkey.cs" />
     <Compile Include="Assets\Scripts\Camera Scripts\CameraFollow.cs" />
+    <Compile Include="Assets\Scripts\Player Scripts\Drop.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\Inventory.cs" />
+    <Compile Include="Assets\Scripts\Player Scripts\Pickup.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\PlayerControlScript.cs" />
+    <Compile Include="Assets\Scripts\Player Scripts\Slot.cs" />
     <Compile Include="Assets\Scripts\Scene Scripts\EditMap.cs" />
     <Compile Include="Assets\Scripts\Scene Scripts\NewGame.cs" />
     <Compile Include="Assets\Scripts\Scene Scripts\Quit.cs" />
     <Compile Include="Assets\Scripts\Scene Scripts\ReadGame.cs" />
     <Compile Include="Assets\Scripts\Scene Scripts\Setup.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:/Joey Shen/Culearn/3004/3004B_Project/Stone/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>D:/git/3004B/3004B_Project/Stone/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>D:/Joey Shen/Culearn/3004/3004B_Project/Stone/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>D:/git/3004B/3004B_Project/Stone/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>D:/Joey Shen/Culearn/3004/3004B_Project/Stone/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>D:/git/3004B/3004B_Project/Stone/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Editor">
-      <HintPath>D:/Joey Shen/Culearn/3004/3004B_Project/Stone/Library/ScriptAssemblies/Editor.dll</HintPath>
+      <HintPath>D:/git/3004B/3004B_Project/Stone/Library/ScriptAssemblies/Editor.dll</HintPath>
     </Reference>
     <Reference Include="XiaomiSupport">
-      <HintPath>D:/Joey Shen/Culearn/3004/3004B_Project/Stone/Library/ScriptAssemblies/XiaomiSupport.dll</HintPath>
+      <HintPath>D:/git/3004B/3004B_Project/Stone/Library/ScriptAssemblies/XiaomiSupport.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:/Joey Shen/Culearn/3004/3004B_Project/Stone/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>D:/git/3004B/3004B_Project/Stone/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>D:/Joey Shen/Culearn/3004/3004B_Project/Stone/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>D:/git/3004B/3004B_Project/Stone/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.4.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -292,19 +295,19 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.4.15f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>D:/Joey Shen/Culearn/3004/3004B_Project/Stone/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>D:/git/3004B/3004B_Project/Stone/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>D:/Joey Shen/Culearn/3004/3004B_Project/Stone/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>D:/git/3004B/3004B_Project/Stone/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>D:/Joey Shen/Culearn/3004/3004B_Project/Stone/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>D:/git/3004B/3004B_Project/Stone/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="ChannelPurchase">
-      <HintPath>D:/Joey Shen/Culearn/3004/3004B_Project/Stone/Library/PackageCache/com.unity.xiaomi@1.0.3/ChannelPurchase.dll</HintPath>
+      <HintPath>D:/git/3004B/3004B_Project/Stone/Library/PackageCache/com.unity.xiaomi@1.0.3/ChannelPurchase.dll</HintPath>
     </Reference>
     <Reference Include="UnityStore">
-      <HintPath>D:/Joey Shen/Culearn/3004/3004B_Project/Stone/Library/PackageCache/com.unity.xiaomi@1.0.3/UnityStore.dll</HintPath>
+      <HintPath>D:/git/3004B/3004B_Project/Stone/Library/PackageCache/com.unity.xiaomi@1.0.3/UnityStore.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.4.15f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
