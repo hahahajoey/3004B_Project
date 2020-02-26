@@ -59,6 +59,8 @@ public class PlayerControlScript : MonoBehaviour
         animator.SetFloat("Speed", 0);
     }
 
+
+
     //move call
     public void Move_Up() 
     { rb.velocity = new Vector2(rb.velocity.x ,+speed );
