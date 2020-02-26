@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 725687183080994579}
   - component: {fileID: 9214352828974911263}
   - component: {fileID: 2118407609360717039}
-  - component: {fileID: 114410809756405852}
   m_Layer: 0
   m_Name: HP Buttom
   m_TagString: Untagged
@@ -114,16 +113,3 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &114410809756405852
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5176013148434586519}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b506c65ff4defb4eb3fce2d15e93887, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item: {fileID: 8618329296891930673, guid: d93202bccf83c0a48866abbcc3e1d67c, type: 3}
