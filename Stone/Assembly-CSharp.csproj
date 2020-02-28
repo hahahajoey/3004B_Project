@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scenes\Monkey\Monkey.cs" />
     <Compile Include="Assets\Scripts\Camera Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\Apple_Item.cs" />
+    <Compile Include="Assets\Scripts\Player Scripts\Bag.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\HealthBar.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\Inventory.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\Pickup.cs" />
