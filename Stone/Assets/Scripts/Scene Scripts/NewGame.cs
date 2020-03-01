@@ -6,5 +6,5 @@ using UnityEngine.SceneManagement;
 public class NewGame : MonoBehaviour
 {
     public void SceneLoader()
-    { SceneManager.LoadScene("GameScene"); }
+    { SceneManager.LoadScene("Level0"); }
 }
