@@ -68,8 +68,8 @@ MonoBehaviour:
     y: 0
     width: 368
     height: 947
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 277, y: 74}
+  m_MaxSize: {x: 4002, y: 4024}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -451,7 +451,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 7c2f0000
     m_LastClickedID: 12156
-    m_ExpandedIDs: 00000000702600007627000086270000c02b0000622c0000a42c0000142d0000222d00004e2d00005c2d0000b42d0000f82d0000fa2d0000fe2d00002c2e0000562e00007c2f0000143200001632000000ca9a3b
+    m_ExpandedIDs: 00000000702600007627000086270000c02b0000622c0000a42c0000142d0000222d00004e2d00005c2d0000b42d0000f82d0000fa2d0000fe2d00002c2e0000562e00007c2f00003c3200003e32000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -479,7 +479,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000702600007627000086270000c02b0000622c0000a42c0000142d0000222d00004e2d00005c2d0000b42d0000f82d0000fa2d0000fe2d00002c2e0000562e00007c2f00001432000016320000
+    m_ExpandedIDs: 00000000702600007627000086270000c02b0000622c0000a42c0000142d0000222d00004e2d00005c2d0000b42d0000f82d0000fa2d0000fe2d00002c2e0000562e00007c2f00003c3200003e320000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -598,9 +598,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 7af9ffff
-      m_LastClickedID: -1670
-      m_ExpandedIDs: defbffff
+      m_SelectedIDs: d0300000
+      m_LastClickedID: 12496
+      m_ExpandedIDs: defbffffd62f000088300000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -656,9 +656,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 5.523085, y: -5.133757, z: 0.38055617}
+    m_Target: {x: 0.43454152, y: -0.16000772, z: 0.37890625}
     speed: 2
-    m_Value: {x: 5.523085, y: -5.133757, z: 0.38055617}
+    m_Value: {x: 0.43454152, y: -0.16000772, z: 0.37890625}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
