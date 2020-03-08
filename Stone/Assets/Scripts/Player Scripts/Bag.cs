@@ -17,7 +17,7 @@ public class Bag : MonoBehaviour
 
     void Start()
     {
-        isClose = true;
+        isClose = false;
         slot1.SetActive(isClose);
         slot2.SetActive(isClose);
         slot3.SetActive(isClose);
