@@ -8,6 +8,10 @@ public class Pause : MonoBehaviour
 
     public GameObject pauseUI;
 
+    private void Start()
+    {
+        resume();
+    }
     public void Click()
     {
         if (Paused) { resume(); }
