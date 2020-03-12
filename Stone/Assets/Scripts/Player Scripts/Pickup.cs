@@ -6,11 +6,14 @@ public class Pickup : MonoBehaviour
 {
     private Inventory inventory;
     public GameObject item_slot;
+    public int item_ID;
     public GameObject item_bag;
+    public PlayerControlScript player;
     private bool slotFull;
     void Start()
     {
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+        
     }
 
     // Update is called once per frame
@@ -23,6 +26,12 @@ public class Pickup : MonoBehaviour
                 if(inventory.isFull[i] == false)
                 {
                     inventory.isFull[i] = true;
+                    switch (item_ID)
+                    {
+                        case 1:
+                            player.quickslots[i] = 1;
+                            break;
+                    }
                     Instantiate(item_slot, inventory.slots[i].transform, false);
                     Destroy(gameObject);
                     break;

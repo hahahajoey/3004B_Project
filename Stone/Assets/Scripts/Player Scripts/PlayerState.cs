@@ -7,8 +7,8 @@ public class PlayerState
 {
     public int hp;
     public float [] position;
-    public Inventory inventory;
     public int level;
+    public int[] slots;
 
     public PlayerState(PlayerControlScript player)
     {
@@ -17,6 +17,6 @@ public class PlayerState
         level = player.level;
         position[0] = player.position.x;
         position[1] = player.position.y;
-        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+        slots = player.quickslots;
     }
 }
