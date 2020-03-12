@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerControlScript : MonoBehaviour
 {
-    public int maxHealth = 100;
+    public float maxHealth = 200;
 
-    public int currentHealth;
+    public float currentHealth;
 
     public Vector3 position;
 
@@ -48,7 +48,7 @@ public class PlayerControlScript : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         currentHealth -= damage;
 

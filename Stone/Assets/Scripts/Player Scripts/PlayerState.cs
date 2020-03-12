@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class PlayerState
 {
-    public int hp;
+    public float hp;
     public float [] position;
     public int level;
     public int[] slots;
