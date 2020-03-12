@@ -47,11 +47,4 @@ public class Bag : MonoBehaviour
         drop4.SetActive(isClose);
 
     }
-    
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
