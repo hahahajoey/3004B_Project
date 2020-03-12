@@ -19,7 +19,10 @@ public class PlayerControlScript : MonoBehaviour
     public HealthBar healthBar;
 
     public int level;
-  
+
+    public int[] quickslots;
+
+    public int[] bagslots;
 
     private bool death;
 
@@ -32,6 +35,8 @@ public class PlayerControlScript : MonoBehaviour
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
         level = 0;
+        quickslots = new int[4];
+        bagslots = new int[33];
     }
 
     // Update is called once per frame
