@@ -20,9 +20,9 @@ public class PlayerControlScript : MonoBehaviour
 
     public int level;
 
-    public Transform attackPoint;
-    public float attackRange = 0.5f;
-    public LayerMask enemyLayers;
+    public int[] quickslots;
+
+    public int[] bagslots;
 
     private bool death;
 
@@ -35,6 +35,8 @@ public class PlayerControlScript : MonoBehaviour
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
         level = 0;
+        quickslots = new int[4];
+        bagslots = new int[33];
     }
 
     // Update is called once per frame
@@ -43,14 +45,6 @@ public class PlayerControlScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             TakeDamage(20);
-        }
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-            Attack();
-        }
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            Shoot();
         }
     }
 
@@ -115,37 +109,9 @@ public class PlayerControlScript : MonoBehaviour
 
     //attack funtion
     void Attack()
-    {
-        //Play an attack animation
-        animator.SetTrigger("Attack");
-        //Detect enemies in the range of attack
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
-        //Damage
-        foreach (Collider2D enemy in hitEnemies)
-        {
-            Debug.Log("We hit an enemy");
+    { }
+   
 
-        }
-    }
-    void Shoot()
-    {
-        //Play an attack animation
-        animator.SetTrigger("Shoot");
-        //Detect enemies in the range of attack
-        //Damage
-    }
-
-    void OnDrawGizmosSelected()
-    {
-        if (attackPoint == null)
-        {
-            return;
-        }
-
-        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
-    }
-
-
-
+   
 
 }
