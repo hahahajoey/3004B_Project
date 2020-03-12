@@ -8,7 +8,7 @@ public class PlayerControlScript : MonoBehaviour
 
     public int currentHealth;
 
-    private Vector3 postion;
+    public Vector3 position;
 
     public float speed = 1f;
 
@@ -17,6 +17,8 @@ public class PlayerControlScript : MonoBehaviour
     public Animator animator;
 
     public HealthBar healthBar;
+
+    public int level;
   
 
     private bool death;
@@ -26,9 +28,10 @@ public class PlayerControlScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        postion = transform.position;
+        position = transform.position;
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        level = 0;
     }
 
     // Update is called once per frame
@@ -95,6 +98,9 @@ public class PlayerControlScript : MonoBehaviour
         animator.SetFloat("Speed", 1);
 
     }
+
+    public void Save_State()
+    {Save_and_load.Save(this);}
 
     //attack funtion
     void Attack()
