@@ -21,39 +21,48 @@ public class Pickup : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            for(int i=0; i < inventory.slots.Length; i++)
-            {
-                if(inventory.isFull[i] == false)
-                {
-                    inventory.isFull[i] = true;
-                    switch (item_ID)
-                    {
-                        case 1:
-                            player.quickslots[i] = 1;
-                            break;
-                    }
-                    Instantiate(item_slot, inventory.slots[i].transform, false);
-                    Destroy(gameObject);
-                    break;
-                }
-                if(i == inventory.slots.Length - 1)
-                {
-                    slotFull = true;
-                }
-            }
-            if (slotFull)
-            {
+            //for(int i=0; i < inventory.slots.Length; i++)
+            //{
+              //  if(inventory.isFull[i] == false)
+               // {
+                //    inventory.isFull[i] = true;
+                //    switch (item_ID)
+                 //   {
+                 //       case 1:
+                  //          player.quickslots[i] = 1;
+                 //           break;
+                  //  }
+                  //  Instantiate(item_slot, inventory.slots[i].transform, false);
+                   // Destroy(gameObject);
+               //     break;
+              //  }
+            //    if(i == inventory.slots.Length - 1)
+             //   {
+             //       slotFull = true;
+             //   }
+          //  }
+         //   if (slotFull)
+          //  {
                 for (int i = 0; i < inventory.bagslot.Length; i++)
                 {
                     if (inventory.isFull_Bag[i] == false)
                     {
                         inventory.isFull_Bag[i] = true;
-                        Instantiate(item_bag, inventory.bagslot[i].transform, false);
+                    switch (item_ID)
+                         {
+                             case 1:
+                                player.bagslots[i] = 1;
+                                 break;
+                        }
+                    
+                    
+                    Instantiate(item_bag, inventory.bagslot[i].transform, false);
+
                         Destroy(gameObject);
                         break;
                     }
                 }
-            }
+         //   }
         }
     }
 }

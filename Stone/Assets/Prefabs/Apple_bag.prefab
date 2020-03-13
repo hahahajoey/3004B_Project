@@ -139,3 +139,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item_slot: {fileID: 6887612931443397229, guid: 7198f359c6e7a6c49bd772064d6d62b6,
     type: 3}
+  playerControlScript: {fileID: 0}
+  item_ID: 1

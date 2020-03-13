@@ -42,14 +42,14 @@ public class EnemyAI : MonoBehaviour
        
        // Debug.Log(transform.position);
 
-        if (distance <= 30 && distance>4)
+        if (distance <= 30 && distance>5)
         {
             enemy.MovePosition((Vector2)transform.position + (d * speed * Time.deltaTime));
         }
-        else if(distance <= 4)
+        else if(distance <= 5)
         {
-            //enemy.MovePosition((Vector2)transform.position );
-            player.GetComponent<PlayerControlScript>().TakeDamage(1);
+            enemy.MovePosition((Vector2)transform.position );
+            player.GetComponent<PlayerControlScript>().TakeDamage(0.2f);
         }
         else if (transform.position.x - startPoint.x <0.1 && transform.position.y - startPoint.y < 0.1)
         {

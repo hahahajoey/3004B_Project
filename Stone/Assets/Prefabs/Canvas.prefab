@@ -1152,7 +1152,6 @@ GameObject:
   - component: {fileID: 5019523918034474728}
   - component: {fileID: 5019523918034474711}
   - component: {fileID: 5019523918034474729}
-  - component: {fileID: 5019523918034474730}
   m_Layer: 0
   m_Name: Slot (1)
   m_TagString: Background
@@ -1227,26 +1226,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 0
---- !u!114 &5019523918034474730
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5019523918034474709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92225e8d6eea413459cd6dc2d1075842, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slot1: {fileID: 0}
-  slot2: {fileID: 0}
-  slot3: {fileID: 0}
-  slot4: {fileID: 0}
-  drop1: {fileID: 0}
-  drop2: {fileID: 0}
-  drop3: {fileID: 0}
-  drop4: {fileID: 0}
 --- !u!1 &5019523918053057447
 GameObject:
   m_ObjectHideFlags: 0
