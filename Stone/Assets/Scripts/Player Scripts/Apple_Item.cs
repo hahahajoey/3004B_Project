@@ -9,6 +9,9 @@ public class Apple_Item : MonoBehaviour
     private HealthBar helthbar;
     private Inventory inventory;
     public GameObject item_slot;
+    private PlayerControlScript playerControlScript;
+    public int item_ID;
+
 
     // Update is called once per frame
 
@@ -16,6 +19,8 @@ public class Apple_Item : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+        
+    playerControlScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControlScript>();
     }
     public void Use()
     {
@@ -33,7 +38,15 @@ public class Apple_Item : MonoBehaviour
             if (inventory.isFull[i] == false)
             {
                 inventory.isFull[i] = true;
-                Instantiate(item_slot, inventory.slots[i].transform, false);
+                switch (item_ID)
+                 {
+                     case 1:
+                        playerControlScript.quickslots[i] = 1;
+                        
+                         break;
+                }
+               
+              Instantiate(item_slot, inventory.slots[i].transform, false);
                 Destroy(gameObject);
                 break;
             }
