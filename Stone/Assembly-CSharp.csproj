@@ -65,6 +65,8 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\BackToMenu.cs" />
     <Compile Include="Assets\Scripts\Camera Scripts\CameraFollow.cs" />
+    <Compile Include="Assets\Scripts\Enemy Scripts\BossAI.cs" />
+    <Compile Include="Assets\Scripts\Enemy Scripts\BossInfo.cs" />
     <Compile Include="Assets\Scripts\Enemy Scripts\EnemyAI.cs" />
     <Compile Include="Assets\Scripts\Enemy Scripts\EnemyInfo.cs" />
     <Compile Include="Assets\Scripts\Pause.cs" />
