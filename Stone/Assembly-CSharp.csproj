@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\Enemy Scripts\BossInfo.cs" />
     <Compile Include="Assets\Scripts\Enemy Scripts\EnemyAI.cs" />
     <Compile Include="Assets\Scripts\Enemy Scripts\EnemyInfo.cs" />
+    <Compile Include="Assets\Scripts\Helper Script\HelperAI.cs" />
     <Compile Include="Assets\Scripts\Pause.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\Apple_Item.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\Bag.cs" />
@@ -80,6 +81,7 @@
     <Compile Include="Assets\Scripts\Player Scripts\PlayerState.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\Save.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\Slot.cs" />
+    <Compile Include="Assets\Scripts\Player Scripts\Summon_Item.cs" />
     <Compile Include="Assets\Scripts\Scene Scripts\EditMap.cs" />
     <Compile Include="Assets\Scripts\Scene Scripts\NewGame.cs" />
     <Compile Include="Assets\Scripts\Scene Scripts\Quit.cs" />

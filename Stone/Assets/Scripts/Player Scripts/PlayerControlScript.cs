@@ -53,7 +53,7 @@ public class PlayerControlScript : MonoBehaviour
         {
             Debug.Log("Game over");
             pauseUI.SetActive(true);
-            Destroy(gameObject);
+            //Destroy(gameObject);
            
         }
         if (! isMoving)
