@@ -7,6 +7,11 @@ TagManager:
   - Background
   - terrain
   - player
+  - enemy1
+  - enemy2
+  - enemy3
+  - enemy4
+  - helper
   layers:
   - Default
   - TransparentFX
@@ -18,7 +23,7 @@ TagManager:
   - 
   - Setting UI
   - Enemy
-  - 
+  - 1
   - 
   - 
   - 

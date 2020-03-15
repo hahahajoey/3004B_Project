@@ -36,6 +36,7 @@ public class EnemyInfo : MonoBehaviour
     {
         Debug.Log("Enemy died!");
         Destroy(gameObject);
+
         //Die animation
 
         //Disable
