@@ -27,6 +27,9 @@ public class PlayerControlScript : MonoBehaviour
     private bool death;
 
     Vector2 movement;
+    private bool isMoving;
+
+    public GameObject pauseUI;
 
     // Start is called before the first frame update
     void Start()
@@ -46,6 +49,20 @@ public class PlayerControlScript : MonoBehaviour
         {
             TakeDamage(20);
         }
+        if(currentHealth <= 0)
+        {
+            Debug.Log("Game over");
+            pauseUI.SetActive(true);
+            //Destroy(gameObject);
+           
+        }
+        if (! isMoving)
+        {
+            rb.MovePosition((Vector2)transform.position);
+        }
+        
+
+
     }
 
     public void TakeDamage(float damage)
@@ -59,12 +76,14 @@ public class PlayerControlScript : MonoBehaviour
     {
         rb.velocity = new Vector2(0f, rb.velocity.y);
         animator.SetFloat("Speed", 0);
+        isMoving = false;
 
     }
     public void stop1()
     {
         rb.velocity = new Vector2( rb.velocity.x, 0f);
         animator.SetFloat("Speed", 0);
+        isMoving = false;
     }
 
 
@@ -75,6 +94,7 @@ public class PlayerControlScript : MonoBehaviour
         animator.SetFloat("Horizontal", 0);
         animator.SetFloat("Vertical", 1);
         animator.SetFloat("Speed", 1);
+        isMoving = true;
         //animator.SetFloat("Horizontal", 1);
         //animator.SetFloat("Vertical", 0);
         //animator.SetFloat("Speed", 1);
@@ -87,6 +107,7 @@ public class PlayerControlScript : MonoBehaviour
         animator.SetFloat("Horizontal", 0);
         animator.SetFloat("Vertical", -1);
         animator.SetFloat("Speed", 1);
+        isMoving = true;
     }
 
     public void Move_Left()
@@ -94,6 +115,7 @@ public class PlayerControlScript : MonoBehaviour
         animator.SetFloat("Horizontal", -1);
         animator.SetFloat("Vertical", 0);
         animator.SetFloat("Speed", 1);
+        isMoving = true;
 
     }
     public void Move_Right()
@@ -101,6 +123,7 @@ public class PlayerControlScript : MonoBehaviour
         animator.SetFloat("Horizontal", 1);
         animator.SetFloat("Vertical", 0);
         animator.SetFloat("Speed", 1);
+        isMoving = true;
 
     }
 

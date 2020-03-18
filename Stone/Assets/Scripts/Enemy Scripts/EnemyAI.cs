@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyAI : MonoBehaviour
 {
     // Start is called before the first frame update
+    public Transform sky;
     public Transform player;
     public float speed;
     private Rigidbody2D enemy;
@@ -12,10 +13,18 @@ public class EnemyAI : MonoBehaviour
     private Vector2 movementBack;
     private float distance;
     private Vector3 startPoint;
+    private int maxHealth = 100;
+    public HealthBar healthBar;
+    int currentHealth;
+    public bool isDie;
+    //GameObject e;
     void Start()
     {
+        isDie = false;
         enemy = this.GetComponent<Rigidbody2D>();
         startPoint = transform.position;
+        currentHealth = maxHealth;
+        //e = this.gameObject;
     }
 
     // Update is called once per frame
@@ -27,12 +36,42 @@ public class EnemyAI : MonoBehaviour
         directionFromStart.Normalize();
         movement = direction;
         movementBack = directionFromStart;
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            TakeDamage(20);
+        }
     }
 
     private void FixedUpdate()
     {
         
         EnemyMovement(movement, movementBack);
+    }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
+
+        //Player hurt animation
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+    void Die()
+    {
+        isDie = true;
+        Debug.Log("Enemy died!");
+        //e.SetActive(false);
+        transform.position = sky.position;
+      
+        
+
+        //Die animation
+
+        //Disable
     }
     void EnemyMovement(Vector2 d, Vector2 b)
     {
@@ -42,11 +81,11 @@ public class EnemyAI : MonoBehaviour
        
        // Debug.Log(transform.position);
 
-        if (distance <= 30 && distance>5)
+        if (distance <= 30 && distance>4.5)
         {
             enemy.MovePosition((Vector2)transform.position + (d * speed * Time.deltaTime));
         }
-        else if(distance <= 5)
+        else if(distance <= 4.5)
         {
             enemy.MovePosition((Vector2)transform.position );
             player.GetComponent<PlayerControlScript>().TakeDamage(0.2f);

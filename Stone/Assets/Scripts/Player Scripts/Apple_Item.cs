@@ -25,9 +25,22 @@ public class Apple_Item : MonoBehaviour
     public void Use()
     {
 
-
-        player.GetComponent<PlayerControlScript>().TakeDamage(-20);
-        Destroy(gameObject);
+        if(player.GetComponent<PlayerControlScript>().currentHealth <= player.GetComponent<PlayerControlScript>().maxHealth - 20)
+        {
+            player.GetComponent<PlayerControlScript>().TakeDamage(-20);
+            Destroy(gameObject);
+        }
+        else if(player.GetComponent<PlayerControlScript>().currentHealth == player.GetComponent<PlayerControlScript>().maxHealth)
+        {
+            return;
+        }
+        else
+        {
+            player.GetComponent<PlayerControlScript>().TakeDamage(player.GetComponent<PlayerControlScript>().currentHealth- player.GetComponent<PlayerControlScript>().maxHealth);
+            Destroy(gameObject);
+        }
+      
+       
 
     }
     public void PickFromBag()
