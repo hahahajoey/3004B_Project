@@ -12,6 +12,7 @@ TagManager:
   - enemy3
   - enemy4
   - helper
+  - PORTAL
   layers:
   - Default
   - TransparentFX
