@@ -36,6 +36,11 @@ public class PlayerControlScript : MonoBehaviour
     private bool isMoving;
 
     public GameObject pauseUI;
+    private Inventory inventory;
+    public GameObject summon;
+    public GameObject apple;
+    public GameObject summonInBag;
+    public GameObject appleInBag;
 
     // Start is called before the first frame update
     void Start()
@@ -46,6 +51,14 @@ public class PlayerControlScript : MonoBehaviour
         level = 0;
         quickslots = new int[4];
         bagslots = new int[33];
+        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+        //test the load funtion
+        quickslots[2] = 1;
+        quickslots[0] = 2;
+        bagslots[2] = 1;
+        bagslots[9] = 1;
+        bagslots[5] = 2;
+        Loadinventory(quickslots, bagslots);
     }
 
     // Update is called once per frame
@@ -143,7 +156,7 @@ public class PlayerControlScript : MonoBehaviour
     {Save_and_load.Save(this);}
 
     //attack funtion
-    void Attack()
+    public void Attack()
     {
         //Play an attack animation
         animator.SetTrigger("Attack");
@@ -152,11 +165,12 @@ public class PlayerControlScript : MonoBehaviour
         //Damage enemies
         foreach(Collider2D enemy in hitEnemies)
         {
-            Debug.Log("We hit the enemy");
+            //Debug.Log("We hit the enemy");
+            enemy.GetComponent<EnemyAI>().TakeDamage(25);
         }
     }
 
-    void Shoot()
+    public void Shoot()
     {
         animator.SetTrigger("Shoot");
     }
@@ -168,6 +182,38 @@ public class PlayerControlScript : MonoBehaviour
             return;
         }
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
+
+    void Loadinventory(int[] quickslots, int[] bagslots)
+    {
+        for(int i=0;i< quickslots.Length; i++)
+        {
+            if (quickslots[i] == 1)
+            {
+                inventory.isFull[i] = true;
+                Instantiate(apple, inventory.slots[i].transform, false);
+            }
+            else if (quickslots[i] == 2)
+            {
+                inventory.isFull[i] = true;
+                Instantiate(summon, inventory.slots[i].transform, false);
+                
+            }
+        }
+        for (int i = 0; i < bagslots.Length; i++)
+        {
+            if (bagslots[i] == 1)
+            {
+                inventory.isFull_Bag[i] = true;
+                Instantiate(appleInBag, inventory.bagslot[i].transform, false);
+            }
+            else if (bagslots[i] == 2)
+            {
+                inventory.isFull_Bag[i] = true;
+                Instantiate(summonInBag, inventory.bagslot[i].transform, false);
+
+            }
+        }
     }
 
 }

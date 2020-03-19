@@ -52,7 +52,10 @@ public class Pickup : MonoBehaviour
                          {
                              case 1:
                                 player.bagslots[i] = 1;
-                                 break;
+                            break;
+                            case 2:
+                                player.bagslots[i] = 2;
+                            break;
                         }
                     
                     

@@ -28,6 +28,7 @@ public class Apple_Item : MonoBehaviour
         if(player.GetComponent<PlayerControlScript>().currentHealth <= player.GetComponent<PlayerControlScript>().maxHealth - 20)
         {
             player.GetComponent<PlayerControlScript>().TakeDamage(-20);
+            //playerControlScript.quickslots[i] = 0;
             Destroy(gameObject);
         }
         else if(player.GetComponent<PlayerControlScript>().currentHealth == player.GetComponent<PlayerControlScript>().maxHealth)
@@ -58,7 +59,9 @@ public class Apple_Item : MonoBehaviour
                         
                          break;
                 }
-               
+                playerControlScript.bagslots[i] = 0;
+
+
               Instantiate(item_slot, inventory.slots[i].transform, false);
                 Destroy(gameObject);
                 break;
