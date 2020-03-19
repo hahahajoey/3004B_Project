@@ -16,6 +16,12 @@ public class PlayerControlScript : MonoBehaviour
 
     public Animator animator;
 
+    public Transform attackPoint;
+
+    public float attackRange = 0.5f;
+
+    public LayerMask enemyLayers;
+
     public HealthBar healthBar;
 
     public int level;
@@ -60,8 +66,14 @@ public class PlayerControlScript : MonoBehaviour
         {
             rb.MovePosition((Vector2)transform.position);
         }
-        
-
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            Attack();
+        }
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            Shoot();
+        }
 
     }
 
@@ -132,9 +144,30 @@ public class PlayerControlScript : MonoBehaviour
 
     //attack funtion
     void Attack()
-    { }
-   
+    {
+        //Play an attack animation
+        animator.SetTrigger("Attack");
+        //Detect enemies in range of attack
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers); 
+        //Damage enemies
+        foreach(Collider2D enemy in hitEnemies)
+        {
+            Debug.Log("We hit the enemy");
+        }
+    }
 
-   
+    void Shoot()
+    {
+        animator.SetTrigger("Shoot");
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        if (attackPoint == null)
+        {
+            return;
+        }
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
 
 }
