@@ -43,13 +43,15 @@ public class Summon_Item : MonoBehaviour
             if (inventory.isFull[i] == false)
             {
                 inventory.isFull[i] = true;
+                playerControlScript.bagslots[i] = 0;
+                playerControlScript.quickslots[i] = 2;
                 //switch (item_ID)
                 //{
                 //    case 1:
                 //        playerControlScript.quickslots[i] = 1;
 
                 //        break;
-               // }
+                // }
 
                 Instantiate(item_slot, inventory.slots[i].transform, false);
                 Destroy(gameObject);

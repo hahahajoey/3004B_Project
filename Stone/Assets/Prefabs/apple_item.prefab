@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 114745403130388046}
   - component: {fileID: 114737289946879854}
   m_Layer: 0
-  m_Name: Image
+  m_Name: apple_item
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -137,3 +137,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63dbc424b71f4d844a522c8148c6e2bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item_slot: {fileID: 0}
+  item_ID: 1
