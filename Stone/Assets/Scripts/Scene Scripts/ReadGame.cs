@@ -1,18 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ReadGame : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void SceneLoader()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        PlayerState temp = Save_and_load.Loadinfo();
+        string stringtemp = "level" + temp.level.ToString();
+        SceneManager.LoadScene(stringtemp);
     }
 }

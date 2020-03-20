@@ -33,6 +33,7 @@ public class PlayerControlScript : MonoBehaviour
     private bool death;
 
     Vector2 movement;
+
     private bool isMoving;
 
     public GameObject pauseUI;
@@ -46,19 +47,12 @@ public class PlayerControlScript : MonoBehaviour
     void Start()
     {
         position = transform.position;
-        currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
-        level = 0;
         quickslots = new int[4];
         bagslots = new int[33];
+        Load_State();
+        healthBar.SetMaxHealth(maxHealth);
+        healthBar.SetHealth(currentHealth);
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
-        //test the load funtion
-        quickslots[2] = 1;
-        quickslots[0] = 2;
-        bagslots[2] = 1;
-        bagslots[9] = 1;
-        bagslots[5] = 2;
-        Loadinventory(quickslots, bagslots);
     }
 
     // Update is called once per frame
@@ -153,7 +147,10 @@ public class PlayerControlScript : MonoBehaviour
     }
 
     public void Save_State()
-    {Save_and_load.Save(this);}
+    {
+        position = transform.position;
+        Save_and_load.Save(this);
+    }
 
     //attack funtion
     public void Attack()
@@ -197,7 +194,7 @@ public class PlayerControlScript : MonoBehaviour
             {
                 inventory.isFull[i] = true;
                 Instantiate(summon, inventory.slots[i].transform, false);
-                
+
             }
         }
         for (int i = 0; i < bagslots.Length; i++)
@@ -216,4 +213,16 @@ public class PlayerControlScript : MonoBehaviour
         }
     }
 
+    public void Load_State()
+    {
+        PlayerState temp = Save_and_load.Loadinfo();
+        currentHealth = temp.hp;
+        position.x = temp.position[0];
+        position.y = temp.position[1];
+        transform.position = position;
+        level = temp.level;
+        Loadinventory(temp.quickslots, temp.bagslots);
+        quickslots = temp.quickslots;
+        bagslots = temp.bagslots;
+    }
 }
