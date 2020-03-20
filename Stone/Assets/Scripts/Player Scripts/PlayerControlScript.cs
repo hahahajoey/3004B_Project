@@ -183,7 +183,7 @@ public class PlayerControlScript : MonoBehaviour
 
     void Loadinventory(int[] quickslots, int[] bagslots)
     {
-        for(int i=0;i< quickslots.Length; i++)
+        for (int i=0;i< quickslots.Length; i++)
         {
             if (quickslots[i] == 1)
             {
@@ -216,6 +216,7 @@ public class PlayerControlScript : MonoBehaviour
     public void Load_State()
     {
         PlayerState temp = Save_and_load.Loadinfo();
+        temp.print();
         currentHealth = temp.hp;
         position.x = temp.position[0];
         position.y = temp.position[1];

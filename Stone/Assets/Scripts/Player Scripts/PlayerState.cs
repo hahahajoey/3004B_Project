@@ -44,4 +44,13 @@ public class PlayerState
         quickslots = player.quickslots;
         bagslots = player.bagslots;
     }
+
+    public void print()
+    {
+        Debug.Log(hp);
+        Debug.Log(position);
+        Debug.Log(level);
+        Debug.Log(quickslots[0]);
+        Debug.Log(bagslots[0]);
+    }
 }
