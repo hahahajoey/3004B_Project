@@ -12,10 +12,15 @@ public class BossAI : MonoBehaviour
     private Vector2 movementBack;
     private float distance;
     private Vector3 startPoint;
+    public HealthBar healthBar;
+    int currentHealth;
+    private int maxHealth = 300;
+    public bool isDie;
     void Start()
     {
         enemy = this.GetComponent<Rigidbody2D>();
         startPoint = transform.position;
+        currentHealth = maxHealth;
     }
 
     // Update is called once per frame
@@ -34,37 +39,34 @@ public class BossAI : MonoBehaviour
 
         EnemyMovement(movement, movementBack);
     }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
+        //Player hurt animation
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        isDie = true;
+        Debug.Log("Enemy died!");
+        Destroy(gameObject);
+        //Die animation
+        //Disable
+    }
     void EnemyMovement(Vector2 d, Vector2 b)
     {
         distance = ((transform.position.y - player.position.y) * (transform.position.y - player.position.y)) + ((transform.position.x - player.position.x) * (transform.position.x - player.position.x));
-
-
-
-        // Debug.Log(transform.position);
-
-       // if (distance <= 50 && distance > 10)
-        //{
             enemy.MovePosition((Vector2)transform.position + (d * speed * Time.deltaTime));
         if (distance <= 6)
         {
            enemy.MovePosition((Vector2)transform.position);
            player.GetComponent<PlayerControlScript>().TakeDamage(0.5f);
         }
-       // }
-       //else if (distance <= 10)
-       // {
-       //    enemy.MovePosition((Vector2)transform.position);
-       //    player.GetComponent<PlayerControlScript>().TakeDamage(0.2f);
-       // }
-       // else if (transform.position.x - startPoint.x < 0.1 && transform.position.y - startPoint.y < 0.1)
-       // {
-       //      enemy.MovePosition((Vector2)transform.position);
-       //  }
-       //  else
-       //  {
-       //      enemy.MovePosition((Vector2)transform.position + (b * speed * Time.deltaTime));
-       //  }
-
-
     }
 }
