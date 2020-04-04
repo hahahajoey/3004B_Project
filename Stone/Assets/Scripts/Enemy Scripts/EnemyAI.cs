@@ -17,14 +17,12 @@ public class EnemyAI : MonoBehaviour
     public HealthBar healthBar;
     int currentHealth;
     public bool isDie;
-    //GameObject e;
     void Start()
     {
         isDie = false;
         enemy = this.GetComponent<Rigidbody2D>();
         startPoint = transform.position;
         currentHealth = maxHealth;
-        //e = this.gameObject;
     }
 
     // Update is called once per frame
@@ -64,7 +62,6 @@ public class EnemyAI : MonoBehaviour
     {
         isDie = true;
         Debug.Log("Enemy died!");
-        //e.SetActive(false);
         transform.position = sky.position;
       
         
@@ -76,10 +73,6 @@ public class EnemyAI : MonoBehaviour
     void EnemyMovement(Vector2 d, Vector2 b)
     {
         distance = ((transform.position.y - player.position.y) * (transform.position.y - player.position.y)) + ((transform.position.x - player.position.x) * (transform.position.x - player.position.x));
-        
-        
-       
-       // Debug.Log(transform.position);
 
         if (distance <= 30 && distance>4.5)
         {

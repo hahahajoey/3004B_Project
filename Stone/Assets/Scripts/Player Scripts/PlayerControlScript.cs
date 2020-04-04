@@ -30,7 +30,7 @@ public class PlayerControlScript : MonoBehaviour
 
     public int[] bagslots;
 
-    private bool death;
+    //private bool death;
 
     Vector2 movement;
 
@@ -52,7 +52,11 @@ public class PlayerControlScript : MonoBehaviour
         Load_State();
         healthBar.SetMaxHealth(maxHealth);
         healthBar.SetHealth(currentHealth);
+       
+        
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+       
+        
     }
 
     // Update is called once per frame
@@ -66,7 +70,6 @@ public class PlayerControlScript : MonoBehaviour
         {
             Debug.Log("Game over");
             pauseUI.SetActive(true);
-            //Destroy(gameObject);
            
         }
         if (! isMoving)
@@ -114,11 +117,6 @@ public class PlayerControlScript : MonoBehaviour
         animator.SetFloat("Vertical", 1);
         animator.SetFloat("Speed", 1);
         isMoving = true;
-        //animator.SetFloat("Horizontal", 1);
-        //animator.SetFloat("Vertical", 0);
-        //animator.SetFloat("Speed", 1);
-
-
     }
 
     public void Move_Down()
@@ -155,16 +153,27 @@ public class PlayerControlScript : MonoBehaviour
     //attack funtion
     public void Attack()
     {
-        //Play an attack animation
         animator.SetTrigger("Attack");
         //Detect enemies in range of attack
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers); 
         //Damage enemies
-        foreach(Collider2D enemy in hitEnemies)
+        if(level == 3)
         {
-            //Debug.Log("We hit the enemy");
-            enemy.GetComponent<EnemyAI>().TakeDamage(25);
+            foreach (Collider2D enemy in hitEnemies)
+            {
+                enemy.GetComponent<BossAI>().TakeDamage(25);
+                
+            }
+
         }
+        else
+        {
+            foreach (Collider2D enemy in hitEnemies)
+            { 
+                enemy.GetComponent<EnemyAI>().TakeDamage(25);
+            }
+        }
+       
     }
 
     public void Shoot()
@@ -216,14 +225,15 @@ public class PlayerControlScript : MonoBehaviour
     public void Load_State()
     {
         PlayerState temp = Save_and_load.Loadinfo();
+        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
         temp.print();
         currentHealth = temp.hp;
         position.x = temp.position[0];
         position.y = temp.position[1];
         transform.position = position;
         level = temp.level;
-        Loadinventory(temp.quickslots, temp.bagslots);
         quickslots = temp.quickslots;
         bagslots = temp.bagslots;
+        Loadinventory(quickslots, bagslots);
     }
 }
