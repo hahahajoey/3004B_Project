@@ -1,10 +1,10 @@
-2020-1-30 : Assigned to make map, block, player object and its control, camera, and plan for controller on phone.
-2020-2-6  : Finished the basic map, camera follower and the planing of controller.
+2020-1-30 : Self studied how to use Unity, get familiar with functions that have been pre-implemented in Unity, such as rigid body 2d and collider 2d.
+2020-2-6  : Finished the basic map(level 0), applied the collider to both objects and player, camera now follows the player.
 2020-2-13 : Assigned to movement Ui, player object' control, camera's update , and general ui.
-2020-2-20 : Create player healthbar and display.
+2020-2-20 : Create player healthbar and display, added anew script to save the health status of the player, setting the player health to integer.
 2020-2-27 : Edited map components and prefabs.
 2020-3-5  : Finished the second and third map.
-2020-3-12 : Working on details of maps
+2020-3-12 : Github unable to merge to the main branch, pulled a new(latest) copy of the main branch, working on details of maps, changed the health point of player and enimies in to float in order as requested.
 2020-3-19 : Planning for D3, analyzing design patterns and diagrams.
 2020-3-26 : Finished maps and finalized them.
-2020-4-2  : APK package packed, wraping up.
+2020-4-2  : APK package packed, based on Android 4.1(Jelly Bean), JDK 8, wraping up.
