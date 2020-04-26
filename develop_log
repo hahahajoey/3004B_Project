@@ -1,0 +1,72 @@
+Develop Log
+Xiannan Chen 100995076
+2020-1-20: Learn how to use Unity(For example how update(Unity provide) function works and the most useful
+component in Unity).
+2020-1-27: Make movement button and add Stop function in playercontrol script, then using event trigger component
+handle touch control(character movement).
+2020-2-03: Started watching inventory and animation tutorials and continuing familiar with Unity and C# language.
+2020-2-10: Started making inventory system.
+2020-2-17: Finish inventory, slot, bagslot and pickup script. And add these components to our player Game object.
+2020-2-24: Make an item(apple item) and write apple_item script, which can increase player’s HP. And upgrade pickup
+script to make sure when player pick up a new item, this item will be placed in bag’s correct position.
+2020-3-03: upgrade apple_item script, player can move apple_item in bag to quickslot(item only in quickslot can be
+used).
+2020-3-10: Create a new game object, which is enemy. And write enemy script which let each enemy walk forward to
+character if their distance is small enough and the enemy’s speed is less than character. Thus, if the distance between
+one chasing enemy and character become larger than a number, this enemy will go back its original position. And enemy
+will attack character if they are really closed.
+2020-3-17: Create a new game object, which is boss. Its script is very similar with enemy’s script. Just increase its speed
+and attack power. And make character’s attack button. Optimize the animation of movement, make the character can
+face correct direction when it stops moving.
+2020-3-24: Make health system of enemies and boss. And add Takedamage and Die function to scripts of enemy and
+boss. Using event trigger component of attack button to handle the health of enemy and boss decrease correctly.
+2020-3-27: Create a new game object, which is a summon bear can help character attack enemy and boss. Make a
+summon item, when player use this item, the bear will appear for seconds time and disappear. This bear cannot move
+but will attack nearby enemies.
+2020-3-31:write Loadinventory function in playercontrol script. When player go next map, the character will keep the
+item in bag and quickslot at last map.
+Zac Zhuang 101068659
+2020-1-23: Getting started on GitHub, making branches and the main branch, learn how to pull, push and send merge
+pull request.
+2020-1-30: Self studied how to use Unity, get familiar with functions that have been pre-implemented in Unity, such
+as rigid body 2d and collider 2d.
+2020-2-6: Finished the basic map(level 0), applied the collider to both objects and player, camera now follows the
+player.
+2020-2-13: Creating the first map (level 1), design the map route and map layout.
+2020-2-20: Create player health bar and display, added anew script to save the health status of the player, setting the
+player health to integer.
+2020-2-27: Edited map components and prefabs, setting collision boarder to the map and start on new map levels,
+created tile map to create convenient environment for later map background editing.
+2020-3-5: Finished the second and third map's general design and plot the draft landscape.
+2020-3-12: GitHub unable to merge to the main branch, pulled a new(latest) copy of the main branch, working on
+details of maps, changed the health point of player and enemies in to float in order as requested.
+2020-3-19: Planning for D3, analyzing design patterns and diagrams, writing the MVC and composite design pattern
+analysis.
+2020-3-26: Finished maps and finalized, creating and adding portal prefabs, adding a rigid body to the portals that
+when the player step on them, the portal will return a log in the console.
+2020-4-2: APK package packed, based on Android 4.1(Jelly Bean), JDK 8, wrapping up.
+Chupeng Shen 101079598
+2020-1-30: Create basic player control script. Write the scripts for camera. It will follow player while playing.
+2020-2-06: Finish camera script. Create player and some obstacle’s colliders. It will include the map edit.
+2020-2-13: Make all buttons in main menu available.
+2020-2-20: Create and set the loader button. It can read saved local data and then load it.
+2020-2-27: Create pause menu and pause function. While pausing, all status will be stopped until resume the game.
+2020-3-05: Inventory panel and it's pause function, open close button.
+2020-3-12: Player object's saving file state and save for player
+2020-3-19: Loading function and Bug fixing
+2020-3-26: picture fixing
+2020-4-02: Prepare for demo presentation PPT and video.
+Junren Jiang 100999408
+2020-1-28: Learn how to use GitHub Desktop and some basic introduction of Unity
+2020-2-4: Create player model as idle and movement animations that will be used in the future
+2020-2-11: Make connections between movement animation and movement command. Set different animations to
+different directions.
+2020-2-18: Create buttons’ interface and their connections. They aim to make buttons available to port to specific
+scene.
+2020-2-25: Draw an attack range. It will be used to set player’s attack system.
+2020-3-3: Make an attack animation to player. At that time, player can press a key to attack. This action can let the
+player model load attack animation and take damage to enemies if they are in the attack range.
+2020-3-10: Edit the deliverable #3. Focus on the architecture description.
+2020-3-17: Connect the set attack button to attack scripts. It can trigger attack animation and range determination.
+2020-3-24: Fixed some bugs of animation loads. Before that, the attack script cannot trigger health decrease.
+2020-3-31: Fixed some bugs of movement buttons. Write deliverable #4. Collect all develop logs from partners.
